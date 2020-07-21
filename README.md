@@ -41,7 +41,7 @@ cors:
 2. 下载本项目，进入文件夹后，打开命令行执行命令，安装 python 依赖
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 3. 打开项目下的 `config/config.json`，修改 `mirai_http_api - qq` 字段，改为你的 `bot qq`
