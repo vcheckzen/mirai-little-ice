@@ -7,22 +7,23 @@
 ### 领养小冰
 
 1. 根据官方提示领养 [小冰](https://www.msxiaobing.com/) 并绑定 `新浪微博`
-2. Chrome 浏览器无痕模式登录 [微博](https://m.weibo.cn)，按 `F12` 打开控制台并切换到 `Network` 标签
-3. 私信小冰，找到包含 `send` 路径的 Network 请求，复制对应 `Request Headers` 粘贴到项目 `config` 目录的 `ice.header` 文件中
+2. 使用 Chrome 浏览器 `无痕模式` 登录 [https://m.weibo.cn](https://m.weibo.cn)，按 `F12` 打开控制台并切换到 `Network` 标签
+3. 私信小冰，找到包含 `send` 路径的 Network 请求，复制对应 `Request Headers` 粘贴到项目 `config` 目录的 `ice.header` 文件中，覆盖掉默认配置
 
 ### 安装依赖
 
-1. 安装 [Python 3.8](https://www.python.org/) 
-2. 下载并解压 [miraiOK](https://github.com/LXY1226/miraiOK#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80)
-3. 进入解压文件夹，编辑 `config.txt`，在最后一行，填写机器人账号密码，格式如下。填写完毕后，回车换行保存文件，否则无法自动登录
+#### 配置 mirai-console
+
+1. 下载并解压 [miraiOK](https://github.com/LXY1226/miraiOK#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80)
+2. 进入解压文件夹，编辑 `config.txt`，在最后一行，填写机器人账号密码，格式如下。填写完毕后，`回车换行` 保存文件，否则无法自动登录
 
 ```bash
 login qq password
 ```
 
-4. 运行 `miraiOK_windows_amd64.exe`，跟随提示登录机器人账号，成功后关闭窗口。
-5. 进入 `plugins` 目录，下载 [mirai-api-http](https://github.com/project-mirai/mirai-api-http/releases) jar 包放入其中。在该目录下新建 `MiraiAPIHTTP` 目录，进入后新建文件 `setting.yml`。
-6. 打开 `setting.yml`，写入以下配置
+3. 运行 `miraiOK_windows_amd64.exe`，跟随提示登录机器人账号，成功后关闭窗口
+4. 进入 `plugins` 目录，下载 [mirai-api-http-vxxx.jar](https://github.com/project-mirai/mirai-api-http/releases) 并放入其中。在该目录下新建 `MiraiAPIHTTP` 文件夹并 `进入` 它，在里面新建文件 `setting.yml`
+5. 打开 `setting.yml`，写入以下配置
 
 ```yml
 port: 3333
@@ -32,19 +33,24 @@ cors:
   - '*'
 ```
 
-7. 下载本项目，进入文件夹后，安装 python 依赖
+6. 再次运行 `miraiOK_windows_amd64.exe`，登录成功后，将窗口最小化
+
+#### 配置 mirai-little-ice
+
+1. 安装 [Python 3.8](https://www.python.org/) 
+2. 下载本项目，进入文件夹后，打开命令行执行命令，安装 python 依赖
 
 ```bash
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
-8. 启动项目
+3. 启动项目
 
 ```bash
 python index.py
 ```
 
-9. 将机器人邀进群组，@它聊天。
+4. 将机器人邀进群组，@它聊天。
 
 ## 开发
 
@@ -55,7 +61,7 @@ python index.py
 ├── README.md
 ├── assets
 │   └── image
-│       └── public # 临时图片
+│       └── public  # 临时图片
 ├── config
 │   ├── config.json # 配置文件
 │   └── ice.header  # 微博请求头
