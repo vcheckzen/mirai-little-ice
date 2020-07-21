@@ -1,0 +1,17 @@
+{
+    "mirai_http_api": {
+        "qq": 8888888,
+        "auth_key": "1234567890",
+        "address": "localhost:3333/ws"
+    },
+    "image": {
+        "public": "assets/image/public",
+        "good_night": "assets/image/good_night",
+        "not_understand": "assets/image/not_understand"
+    },
+    "plugins": {
+        "ice": {
+            "header": "config/ice.header"
+        }
+    }
+}
