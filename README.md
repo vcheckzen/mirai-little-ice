@@ -44,13 +44,14 @@ cors:
 pip install -r requirements.txt
 ```
 
-3. 启动项目
+3. 打开项目下的 `config/config.json`，修改 `mirai_http_api - qq` 字段，改为你的 `bot qq`
+4. 启动项目
 
 ```bash
 python index.py
 ```
 
-4. 将机器人邀进群组，@它聊天。
+5. 将机器人邀进群组，@它聊天。
 
 ## 开发
 
